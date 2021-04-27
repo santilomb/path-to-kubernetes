@@ -18,12 +18,7 @@ public class HelloWorldApplication {
 
       @RequestMapping(path = "/", method = RequestMethod.GET)
       public String Get() {
-          String html = "<html>\n"
-              + "     <body>\n"
-              + "         <h1>Hello World en HTML</h1>\n"
-              + "         <p>Un parrafo html para agregar un tag P.</p>\n"
-              + "     </body>\n"
-              + "</html>";
+          String html = "<html><body><h1>Hello World en HTML</h1><p>Un parrafo html para agregar un tag P.</p></body></html>";
           return html;
       } 
     }
