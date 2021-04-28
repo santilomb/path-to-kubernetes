@@ -20,18 +20,27 @@ public class HelloWorldApplication {
 
       @RequestMapping(path = "/", method = RequestMethod.GET)
       public String Get() {
-          String html = "<html><body><h1>Hello World en HTML</h1><p>Un parrafo html para agregar un tag P.</p></body></html>";
+          String html = "<html><body><h1>API</h1><p>Los metodos habilitado son:<br>- suma<br>- resta</p><p>La forma de invocar es:<br>- /API/{metodo}/{numero_1}/{numero_2}</body></html>";
           return html;
       }
     
-      @RequestMapping(value = "/API/metodo/{metodoid}/dato/{datoid}", method = RequestMethod.GET)
+      @RequestMapping(value = "/API/suma/{num1}/{num2}", method = RequestMethod.GET)
       @ResponseBody
       public String getFoosBySimplePathWithPathVariables
-        (@PathVariable long metodoid, @PathVariable long datoid) {
-          return "Se llamo al metodo: " + metodoid + 
-            " con el dato: " + metodoid;
+        (@PathVariable long num1, @PathVariable long num2) {
+          long resultado = num1 + num2;
+          String html = "<html><body><h1>Metodo: SUMA</h1><p>Numero 1: " + num1 + "<br>Numero 2: " + num2 + "</p><p>Resultado: " + resultado + "</p></body></html>";
+          return html;
       }
-    
+   
+      @RequestMapping(value = "/API/resta/{num1}/{num2}", method = RequestMethod.GET)
+      @ResponseBody
+      public String getFoosBySimplePathWithPathVariables
+        (@PathVariable long num1, @PathVariable long num2) {
+          long resultado = num1 1 num2;
+          String html = "<html><body><h1>Metodo: RESTA</h1><p>Numero 1: " + num1 + "<br>Numero 2: " + num2 + "</p><p>Resultado: " + resultado + "</p></body></html>";
+          return html;
+      }
     }
   
   public static void main(String[] args) throws IOException {
