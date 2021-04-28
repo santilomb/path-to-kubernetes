@@ -20,7 +20,16 @@ public class HelloWorldApplication {
       public String Get() {
           String html = "<html><body><h1>Hello World en HTML</h1><p>Un parrafo html para agregar un tag P.</p></body></html>";
           return html;
-      } 
+      }
+    
+      @RequestMapping(value = "/API/metodo/{metodoid}/dato/{datoid}", method = RequestMethod.GET)
+      @ResponseBody
+      public String getFoosBySimplePathWithPathVariables
+        (@PathVariable long metodoid, @PathVariable long datoid) {
+          return "Se llamo al metodo: " + metodoid + 
+            " con el dato: " + metodoid;
+      }
+    
     }
   
   public static void main(String[] args) throws IOException {
