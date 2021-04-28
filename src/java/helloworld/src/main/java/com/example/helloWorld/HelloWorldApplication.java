@@ -26,7 +26,7 @@ public class HelloWorldApplication {
     
       @RequestMapping(value = "/API/suma/{num1}/{num2}", method = RequestMethod.GET)
       @ResponseBody
-      public String getFoosBySimplePathWithPathVariables
+      public String getSumaDeDosNumeros
         (@PathVariable long num1, @PathVariable long num2) {
           long resultado = num1 + num2;
           String html = "<html><body><h1>Metodo: SUMA</h1><p>Numero 1: " + num1 + "<br>Numero 2: " + num2 + "</p><p>Resultado: " + resultado + "</p></body></html>";
@@ -35,7 +35,7 @@ public class HelloWorldApplication {
    
       @RequestMapping(value = "/API/resta/{num1}/{num2}", method = RequestMethod.GET)
       @ResponseBody
-      public String getFoosBySimplePathWithPathVariables
+      public String getRestaDeDosNumeros
         (@PathVariable long num1, @PathVariable long num2) {
           long resultado = num1 - num2;
           String html = "<html><body><h1>Metodo: RESTA</h1><p>Numero 1: " + num1 + "<br>Numero 2: " + num2 + "</p><p>Resultado: " + resultado + "</p></body></html>";
