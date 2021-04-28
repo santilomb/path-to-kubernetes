@@ -37,7 +37,7 @@ public class HelloWorldApplication {
       @ResponseBody
       public String getFoosBySimplePathWithPathVariables
         (@PathVariable long num1, @PathVariable long num2) {
-          long resultado = num1 1 num2;
+          long resultado = num1 - num2;
           String html = "<html><body><h1>Metodo: RESTA</h1><p>Numero 1: " + num1 + "<br>Numero 2: " + num2 + "</p><p>Resultado: " + resultado + "</p></body></html>";
           return html;
       }
